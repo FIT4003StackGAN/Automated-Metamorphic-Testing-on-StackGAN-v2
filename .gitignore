@@ -1,0 +1,15 @@
+DAMSMencoders
+examples
+histogram
+backup
+output
+output_encoder
+code/*.pyc
+code/miscc/*.pyc
+.DS_Store
+.idea/
+1710.10916.pdf
+histogram.py
+misc.py
+misc.pyc
+*.gz
