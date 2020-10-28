@@ -37,8 +37,6 @@ Metamorphic Testing is conducted to evaluting the robustness and stability of me
 - Make sure datasets had set up.
 - Create a new folder and place the additional object.
 - Direct to `Data/ birds` and run `python addExtraTree.py -r -o directory/to/place/modified/datasets -d directory/place/extra/object  directory/place/source/images -n maximum_number_of_additional_object` 
-  **Samples:**
-  ![image-20201028195131147](/home/osboxes/snap/typora/23/.config/Typora/typora-user-images/image-20201028195131147.png) 
 
 ##### Blurring images from datasets [[MR<sub>04</sub>]](#MR04)
 - Make sure datasets had set up.
