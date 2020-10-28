@@ -22,18 +22,25 @@ Metamorphic Testing is conducted to evaluting the robustness and stability of me
 #### Preparing testing datasets 
 ##### Modifing images datasets by adding a unobtrusive object [[MR<sub>01</sub>]](#MR01), [[MR<sub>03</sub>]](#MR03), [[MR<sub>05</sub>]](#MR05)
 - Make sure datasets had set up.
+
 - Create a new folder and place the additional object.
+
 - Direct to `Data/ birds` and run `python addExtraBird.py -r -o directory/to/place/modified/datasets -d directory/place/extra/object  directory/place/source/images`
-- replace the modified images with original images datasets\
-**Optional:** 
+
+- replace the modified images with original images datasets
+
+  **Optional:** 
+
 - run `python fixModifiedBird.py -r -o directory/to/place/modified/datasets -d directory/place/extra/object  directory/place/source/images -C class_number -I [image_number]` (eg. python fixModifiedBird.py -r -o "output" -d "extra_birds" "CUB_200_2011/images" -C 001 -I 0002 0004) to change the position of the extra object placed in the source image
 
 ##### Modifing images datasets by adding multiple unobtrusive object [[MR<sub>02</sub>]](#MR02)
 - Make sure datasets had set up.
 - Create a new folder and place the additional object.
-- Direct to `Data/ birds` and run `python addExtraTree.py -r -o directory/to/place/modified/datasets -d directory/place/extra/object  directory/place/source/images -n maximum_number_of_additional_object` \
+- Direct to `Data/ birds` and run `python addExtraTree.py -r -o directory/to/place/modified/datasets -d directory/place/extra/object  directory/place/source/images -n maximum_number_of_additional_object` 
+  **Samples:**
+  ![image-20201028195131147](/home/osboxes/snap/typora/23/.config/Typora/typora-user-images/image-20201028195131147.png) 
 
-##### Bluring images from datasets [[MR<sub>04</sub>]](#MR04)
+##### Blurring images from datasets [[MR<sub>04</sub>]](#MR04)
 - Make sure datasets had set up.
 - Direct to `Data/ birds` and run `python blurImages.py  -r -o directory/to/place/modified/datasets directory/place/source/images`
 - replace the modified images with original images datasets
