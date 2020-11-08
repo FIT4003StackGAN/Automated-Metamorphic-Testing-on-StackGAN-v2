@@ -12,11 +12,12 @@ Metamorphic Testing is conducted to evaluting the robustness and stability of me
 - Follow the instructions and steps from [StackGAN-v2](https://github.com/hanzhanggit/StackGAN-v2) to training the datasets and evaluate the result.
 
 ### MRs
-- **<a id="MR01">MR<sub>01</sub></a>**: Introduction of an unobtrusive object consistently in all training image dataset should not drastically affect the Inception Score
-- **<a id="MR02">MR<sub>02</sub></a>**: Introduction of an unobtrusive object consistently in all training image dataset should result in a grey-tinted effect and impact the Inception Score 
-- **<a id="MR03">MR<sub>03</sub></a>**: Introduction of an unobtrusive object in only a selected portion of the training image dataset should result in a diminished effect of the grey-tinted effect and a higher Inception Score
+- **<a id="MR01">MR<sub>01</sub></a>**: Introduction of a minimally obtrusive object consistently in all training image dataset should not drastically affect the Inception Score.
+- **<a id="MR02">MR<sub>02</sub></a>**: Introduction of a minimally obtrusive object consistently in all training image dataset should result in a grey-tinted effect and impact the Inception Score in a similar manner, regardless of the type of object introduced.
+- **<a id="MR03">MR<sub>03</sub></a>**: Introduction of a minimally obtrusive object in only a selected portion of the training image dataset should result in a diminished effect of the grey-tinted effect and a higher Inception Score than the model in which all training image dataset were modified.
 - **<a id="MR04">MR<sub>04</sub></a>**: The action of performing Gaussian Blurring on the training data images should result in a diminished Inception Score, but not result in any grey-tinted effect.
-- **<a id="MR05">MR<sub>05</sub></a>**: Introduction of an unobtrusive object consistently in all training image dataset should result in a grey-tinted effect and impact the Inception Score in a similar manner, regardless of the colour of the object introduced.
+- **<a id="MR05">MR<sub>05</sub></a>**: Introduction of a minimally obtrusive object consistently in all training image dataset should result in a grey-tinted effect and impact the Inception Score in a similar manner, regardless of the colour of the object introduced.
+- **<a id="MR06">MR<sub>06</sub></a>**: Introduction of an *unobtrusive* object consistently in all training image dataset should not result in a grey-tinted effect and not impact the Inception Score by a huge factor.
 
 ### Implementation
 #### Preparing testing datasets 
@@ -31,9 +32,9 @@ Metamorphic Testing is conducted to evaluting the robustness and stability of me
 
   **Optional:** 
 
-- run `python fixModifiedBird.py -r -o directory/to/place/modified/datasets -d directory/place/extra/object  directory/place/source/images -C class_number -I [image_number]` (eg. python fixModifiedBird.py -r -o "output" -d "extra_birds" "CUB_200_2011/images" -C 001 -I 0002 0004) to change the position of the extra object placed in the source image
+- run `python fixModifiedBird.py -r -o directory/to/place/modified/datasets -d directory/place/extra/object  directory/place/source/images -C class_number -I [image_number]` (eg. python fixModifiedBird.py -r -o "output" -d "extra_birds" "CUB_200_2011/images" -C 001 -I 0002 0004) to change the position of the extra object placed in the source image for [[MR<sub>06</sub>]](#MR06) where the position of the added object will not obstruct the view of the focal object (bird).
 
-##### Modifing images datasets by adding multiple unobtrusive object [[MR<sub>02</sub>]](#MR02)
+##### Modifing images datasets by adding a minimally obtrusive object [[MR<sub>02</sub>]](#MR02)
 - Make sure datasets had set up.
 - Create a new folder and place the additional object.
 - Direct to `Data/ birds` and run `python addExtraTree.py -r -o directory/to/place/modified/datasets -d directory/place/extra/object  directory/place/source/images -n maximum_number_of_additional_object` 
@@ -50,5 +51,5 @@ Metamorphic Testing is conducted to evaluting the robustness and stability of me
 - Direct to `Code/` and run `python main.py --cfg cfg/eval_birds.yml --gpu 0`
 
 
-### references
+### References
 <a id="1">[1]</a> StackGAN: Text to Photo-realistic Image Synthesis with Stacked Generative Adversarial Networks [Paper](https://arxiv.org/pdf/1612.03242v1.pdf) [Code](https://github.com/hanzhanggit/StackGAN-v2)
