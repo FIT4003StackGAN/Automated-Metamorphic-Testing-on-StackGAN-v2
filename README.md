@@ -28,7 +28,7 @@ Metamorphic Testing is conducted to evaluting the robustness and stability of me
 
   **Optional:** 
 - A txt file named 'SavedRecord.txt' will be generated after modified the training images.
-- run `python fixModifiedBird.py -r -o directory/to/place/modified/datasets -d directory/place/extra/object  directory/place/source/images -R SavedRecord.txt -C class_number -I [image_number]` (eg. python fixModifiedBird.py -r -o "output" -d "extra_birds" "CUB_200_2011/images" -C 001 -I 0002 0004) to change the position of the extra object placed in the source image for [[MR<sub>06</sub>]](#MR06) where the position of the added object will not obstruct the view of the focal object (bird).
+- run `python fixModifiedBird.py -r -o directory/to/place/modified/datasets -d directory/place/extra/object  directory/place/source/images -R SavedRecord.txt -C class_number -I [image_number]` (eg. python fixModifiedBird.py -r -o "output" -d "extra_birds" -R "SavedRecord.txt" "CUB_200_2011/images" -C 001 -I 0002 0004) to change the position of the extra object placed in the source image for [[MR<sub>06</sub>]](#MR06) where the position of the added object will not obstruct the view of the focal object (bird).
 
 ##### Modifing images datasets by adding a minimally obtrusive object that different with the focal object (trees) [[MR<sub>02</sub>]](#MR02)
 - Make sure datasets had set up.
