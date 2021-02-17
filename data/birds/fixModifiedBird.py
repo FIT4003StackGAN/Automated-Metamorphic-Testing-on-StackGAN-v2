@@ -8,7 +8,7 @@ from PIL import Image
 
 def fixImages(source, output_directory, image_func, records, classcode, file_indices, *args, **kwds):
     if not records.has_key(classcode):
-        print("Cannot find class start with %s from record"%s)
+        print("Cannot find class start with %s from record"%(classcode))
         return
     
     category = records[classcode]

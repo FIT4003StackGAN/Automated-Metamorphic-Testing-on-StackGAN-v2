@@ -1,5 +1,10 @@
 /*
 !.gitignore
-!AddBirdsRecord.txt
+!*.txt
+attributes.txt
+example_captions.txt
 !*.py
+fixModifiedBirdByRegions.py
+compareBoundingDetectedBox.py
+remove_undetected.py
 modifyText.py

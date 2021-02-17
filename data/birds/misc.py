@@ -2,6 +2,9 @@ import os
 import stat
 import re
 from ast import literal_eval
+import pandas as pd
+import json
+import numpy as np
 
 def getAllFiles(path, fileformat = ['.txt']):
     texts = []
@@ -76,6 +79,40 @@ def writeRecord(path, records):
         lines = map(lambda line: "-->".join(line) + '\n', lines)
         record_file.writelines(lines)
     os.chmod(exact_path, stat.S_IRUSR|stat.S_IRGRP|stat.S_IROTH)
+
+def countRecord(records):
+    cnt = 0
+    for key in records:
+        for items in records[key]:
+            cnt += 1
+    return cnt
+
+
+def load_bbox(bounded_box_file, imagename_list):
+    imagenames = pd.read_csv(imagename_list, delim_whitespace=True, header=None)[1].tolist()
+    bbox_list = pd.read_csv(bounded_box_file, delim_whitespace=True, header=None).astype(int)
+    image_box = dict()
+    for i in range(len(imagenames)):
+        name = os.path.basename(imagenames[i])
+        bbox = bbox_list.iloc[i][1:].tolist()
+        image_box[name] = bbox
+    return image_box
+
+def load_json_data(json_file):
+    with open(json_file, 'r') as file:
+        data = json.load(file)
+    return data
+
+def bbox_position(bbox, size):
+    width, height = size
+    r = int(np.maximum(bbox[2], bbox[3]) * 0.75)
+    center_x = int((2 * bbox[0] + bbox[2]) / 2)
+    center_y = int((2 * bbox[1] + bbox[3]) / 2)
+    ymin = np.maximum(0, center_y - r)
+    ymax = np.minimum(height, center_y + r)
+    xmin = np.maximum(0, center_x - r)
+    xmax = np.minimum(width, center_x + r)
+    return [xmin, ymin, xmax, ymax]
             
         
             
