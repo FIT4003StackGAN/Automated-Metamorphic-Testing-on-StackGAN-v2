@@ -34,31 +34,31 @@ This repository is used to automate the metamorphic test cases written in paper.
 ##### Modifing images datasets by adding an unobtrusive object that similar with the focal object (birds) [[MR<sub>02</sub>]](#MR02)
 - Make sure datasets had set up.
 - Create a new folder and place the additional object.
-- Direct to `Data/ birds` and run `python addExtraBirdByRegions.py directory/place/source/images -R "addBirdRegionRecord(no overlapping).txt" -d "detected_log.json" -o directory/to/place/modified/datasets -e directory/place/extra/object -s 100 100` 
+- Direct to `Data/ birds` and run `python addExtraBirdByRegions.py directory/place/source/images -R "addBirdRegionRecord(no overlapping).txt" -d "detected_log.json" -o directory/to/place/modified/datasets -e extra_birds -s 100 100` 
 - replace the modified images with original images datasets
 
 ##### Modifing images datasets by adding an object that sized 100px and similar with the focal object (birds), the added objects are close to the focal object [[MR<sub>03</sub>]](#MR03)
 - Make sure datasets had set up.
 - Create a new folder and place the additional object.
-- Direct to `Data/ birds` and run `python addExtraBirdByRegions.py directory/place/source/images -R "addBirdRecord(padding_1).txt" -d "detected_log.json" -o directory/to/place/modified/datasets -e directory/place/extra/object -s 100 100`
+- Direct to `Data/ birds` and run `python addExtraBirdByRegions.py directory/place/source/images -R "addBirdRecord(padding_1).txt" -d "detected_log.json" -o directory/to/place/modified/datasets -e extra_birds -s 100 100`
 - replace the modified images with original images datasets
 
 ##### Modifing images datasets by adding an object that sized 100px and similar with the focal object (birds), the added objects are 100px further to the focal object [[MR<sub>04</sub>]](#MR04)
 - Make sure datasets had set up.
 - Create a new folder and place the additional object.
-- Direct to `Data/ birds` and run `python addExtraBirdByRegions.py directory/place/source/images -R "addBirdRecord(padding_2).txt" -d "detected_log.json" -o directory/to/place/modified/datasets -e directory/place/extra/object -s 100 100`
+- Direct to `Data/ birds` and run `python addExtraBirdByRegions.py directory/place/source/images -R "addBirdRecord(padding_2).txt" -d "detected_log.json" -o directory/to/place/modified/datasets -e extra_birds -s 100 100`
 - replace the modified images with original images datasets
 
 ##### Modifing images datasets by adding an object that similar with the focal object (birds) inside the bounding box [[MR<sub>05</sub>]](#MR05)
 - Make sure datasets had set up.
 - Create a new folder and place the additional object.
-- Direct to `Data/ birds` and run `python addExtraBirdByRegions.py directory/place/source/images -R "addBirdRecord(inside BBOX).txt" -b "CUB_200_2011/bounding_boxes.txt" -i "CUB_200_2011/images.txt" -o directory/to/place/modified/datasets -e directory/place/extra/object -s 100 100`
+- Direct to `Data/ birds` and run `python addExtraBirdByRegions.py directory/place/source/images -R "addBirdRecord(inside BBOX).txt" -b "CUB_200_2011/bounding_boxes.txt" -i "CUB_200_2011/images.txt" -o directory/to/place/modified/datasets -e extra_birds -s 100 100`
 - replace the modified images with original images datasets
 
 ##### Modifing images datasets by adding an object that similar with the focal object (birds) outside the bounding box [[MR<sub>06</sub>]](#MR06)
 - Make sure datasets had set up.
 - Create a new folder and place the additional object.
-- Direct to `Data/ birds` and run `python addExtraBirdByRegions.py directory/place/source/images -R "addBirdRecord(outside BBOX).txt" -b "CUB_200_2011/bounding_boxes.txt" -i "CUB_200_2011/images.txt" -o directory/to/place/modified/datasets -e directory/place/extra/object -s 100 100`
+- Direct to `Data/ birds` and run `python addExtraBirdByRegions.py directory/place/source/images -R "addBirdRecord(outside BBOX).txt" -b "CUB_200_2011/bounding_boxes.txt" -i "CUB_200_2011/images.txt" -o directory/to/place/modified/datasets -e extra_birds -s 100 100`
 - replace the modified images with original images datasets
 
 #### Training with modified datasets
