@@ -24,7 +24,7 @@ This repository is used to automate the metamorphic test cases written in paper.
 ##### Modifing images datasets by adding an obtrusive object that similar with the focal object (birds) [[MR<sub>01</sub>]](#MR01)
 - Make sure datasets had set up.
 - Create a new folder and place the additional object.
-- Direct to `Data/ birds` and run `python addExtraBird.py directory/place/source/images -R "addBirdRegionRecord(overlapping).txt" -d "detected_log.json" -o directory/to/place/modified/datasets -e directory/place/extra/object -s 100 100`
+- Direct to `Data/ birds` and run `python addExtraBird.py directory/place/source/images -R "addBirdRegionRecord(overlapping).txt" -d "detected_log.json" -o directory/to/place/modified/datasets -e extra_birds -s 100 100`
 - replace the modified images with original images datasets
 
 <!--  **Optional:** -->
