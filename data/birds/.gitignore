@@ -1,5 +1,7 @@
 /*
 !.gitignore
+!/extra_birds
+!detected_log.json
 !*.txt
 attributes.txt
 example_captions.txt
